@@ -10,5 +10,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "cd server && nodemon index.js",
     "client": "cd client && npm run dev"
+  },
+  "dependencies": {
+    "mongoose": "^8.13.2"
   }
 }
