@@ -1,4 +1,4 @@
-const mongoose = require('moongoose');
+const mongoose = require('mongoose');
 
 const EmployeeSchema = new mongoose.Schema({
     employee_id:{ type: Number, required: true, unique: true },
