@@ -4,7 +4,7 @@ const addProject = async (req,res) => {
     try {
         const newProject = req.body;
 
-        const checkProject = await Employee.findOne({ project_code: newProject.project_code });
+        const checkProject = await Project.findOne({ project_code: newProject.project_code });
         if (checkProject) {
             return res.status(409).json({ message: "Project ID already exist." });
         }
