@@ -35,8 +35,17 @@ const getAssignment = async (req, res) => {
     try {
 
         const assignments = await ProjectAssignment.find()
+            .populate('employee_id', 'employee_id full_name email')
+            .populate('project_code', 'project_name project_description')
 
-        res.status(200).json(assignments);
+        const formatAssign = assignments.map((assignment) => ({
+            employee_id: assignment.employee_id.employee_id,
+            employee_name: assignment.employee_id.full_name,
+            project_name: assignment.project_code.project_name,
+            start_date: assignment.start_date,
+        }));
+
+        res.status(200).json(formatAssign);
 
     } catch (error) {
         console.error(error);
