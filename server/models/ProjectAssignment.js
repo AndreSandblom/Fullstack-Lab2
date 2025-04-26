@@ -1,5 +1,7 @@
 const  mongoose = require('mongoose');
 
+// Model for the Assignemnts
+
 const ProjectAssignmentSchema = new mongoose.Schema({
     employee_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Employee', required: true},
     project_code: { type: mongoose.Schema.Types.ObjectId, ref: 'Project', required: true},

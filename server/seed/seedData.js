@@ -4,6 +4,8 @@ const Project = require('../models/Project');
 const ProjectAssignment = require('../models/ProjectAssignment');
 require('dotenv').config();
 
+//Creating Emplyees
+
 const employees = [
     {employee_id: 101, full_name: "Tally Coent", email: "taco@madeup.com",hashed_password: "realhashedpassword1"},
     {employee_id: 102, full_name: "George Terte", email: "gete@madeup.com",hashed_password: "realhashedpassword2"},
@@ -12,6 +14,8 @@ const employees = [
     {employee_id: 105, full_name: "Susan Outny", email: "suou@madeup.com",hashed_password:"realhashedpassword5"},
 ]
 
+//Creating Projects
+
 const projects = [
     { project_code: 1, project_name: "Wall Paint",project_description:"Paint the wall blue, like really blue."},
     { project_code: 2, project_name: "Fix Fence",project_description:"Rebuild the fence that is broken."},
@@ -19,6 +23,13 @@ const projects = [
     { project_code: 4, project_name: "Build Driveway",project_description:"Build a driveway for cars to drive in on."},
     { project_code: 5, project_name: "Relaxation",project_description:"Make sure to relax when all the other project are done."}
 ]
+
+/*
+Function to seed the database.
+First deletes old posts to avoid duplicates
+Then creates the assignemnt frmo the seeded projects and employees
+and lastly saves the assignemnt in the database
+*/
 
 const seedDatabase = async () => {
     try{
@@ -45,5 +56,7 @@ const seedDatabase = async () => {
         mongoose.connection.close();
     }
 };
+
+// Calling the Seeddatabase function.
 
 seedDatabase();

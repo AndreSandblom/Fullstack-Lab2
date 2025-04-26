@@ -1,0 +1,16 @@
+Labb 2 Fullstack Course- André Sandblom
+
+Challanges- 
+Since setting up the backend feelt more comfortable from the last Labb 1 learnings but was still a challange to grasp.
+And using React for the first time was also a learning curve understandning the framwork itself but also using both html and js in the same file.
+Had some problems seeing my data in react app since i made stupid misstake of only keep starting the backend while wondering why nothing was showing in the frontend.
+
+Solutions and Learnings-
+Except for the stupid easy misstakes the solution i feelt were quite straightforward after understanding to set up my frontend with my backend.
+And also getting starting with React i slowly grasp the basics but with any new framework there is a long way to being able to work indepenent on it.
+But working with JS and html in generel wasnt that hard. 
+
+Would I do anything differently-
+First thing i did after being done with this labb was to recreate our base folder for the groupproject.
+with all the new knowledge on how to sett up the root directory splitted in server side and client.
+While keeping the orginisation going for components while also splitting up the controller, models and routes for example.

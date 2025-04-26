@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// Model for Projects
+
 const ProjectSchema = new mongoose.Schema({
     project_code: { type: Number, required: true, unique: true},
     project_name: { type: String, required: true },

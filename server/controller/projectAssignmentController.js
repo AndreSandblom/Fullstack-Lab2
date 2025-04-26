@@ -2,6 +2,10 @@ const ProjectAssignment = require('../models/ProjectAssignment');
 const Employee = require('../models/Employee');
 const Project = require('../models/Project');
 
+// File for creating and getting assignemnt
+
+//Function to add a new assignemnt
+
 const addAssignment = async (req, res) => {
     try {
         const { employee_id, project_code, start_date} = req.body;
@@ -30,6 +34,8 @@ const addAssignment = async (req, res) => {
         res.status(500).json({message: "Something went wrong:",error});
     }
 }
+
+// Function to get all the assignment, using populate (new but avoids the manual joining)
 
 const getAssignment = async (req, res) => {
     try {

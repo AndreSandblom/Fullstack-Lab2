@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config();
 
+//File for setting up the backendserver and connecting to the database and make sure to use the routes.
 
 app.use(cors({
     origin: 'http://localhost:5173'

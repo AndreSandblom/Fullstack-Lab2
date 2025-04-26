@@ -1,5 +1,8 @@
 const Employee = require('../models/Employee');
 
+// Controller file fo Employee
+// Function to be able to route a for the creation of a ne employee (obs, not used yet)
+
 const addEmployee = async (req,res) => {
     try {
         const newEmployee = req.body;

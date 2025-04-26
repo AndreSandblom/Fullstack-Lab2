@@ -1,3 +1,5 @@
+// Creating the table for rendering in react app
+
 import React, { useState, useEffect} from "react";
 import '../App.css';
 
@@ -5,24 +7,25 @@ const AssignmentTable = () => {
     const [assignments, setAssignments] = useState([]);
     const [sortConfig, setSortConfig] = useState({ key: 'project_name', direction: 'desc'})
 
+    // Fetching the assignemnt to populate the table
     const fetchAssignment = async () => {
         try {
             const res = await fetch('http://localhost:5000/api/project_assignments')
             const data = await res.json();
-            console.log("Fetched data:", data);
             setAssignments(data);
         } catch (err) {
             console.error("Fetch error: ", err);
         }
     }
 
+    //  Function to calling the fetching the assignment at an interval
     useEffect(() =>{
-        console.log("Running fetchAssignment...");
         fetchAssignment();
         const interval = setInterval(fetchAssignment, 60000);
         return () => clearInterval(interval);
     }, []);
 
+    // Making sure to copy the array so not to change to original and set up the sorting 
     const sortedAssignments = [...assignments].sort((a,b) => {
         const key = sortConfig.key;
         const direction = sortConfig.direction === 'asc' ? 1 : -1;
@@ -32,6 +35,7 @@ const AssignmentTable = () => {
         return 0; 
     });
 
+    // Function to be able to call the soirt when clicked on 
     const handleSort = (key) => {
         let direction = 'asc';
         if (sortConfig.key === key && sortConfig.direction === 'asc'){
@@ -39,6 +43,8 @@ const AssignmentTable = () => {
         }
         setSortConfig({ key, direction });
     };
+
+    // Html for building the page to show the table of assignment
     return(
         <div className='container'>
             <h1>5 Latest Project Assignments:</h1>

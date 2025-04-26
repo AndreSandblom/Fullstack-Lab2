@@ -1,5 +1,8 @@
 const Project = require('../models/Project')
 
+// Controller file fo Projects
+// Function to be able to route a for the creation of a new Projects (obs, not used yet)
+
 const addProject = async (req,res) => {
     try {
         const newProject = req.body;
